@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[node name="Game" type="Node3D"]
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.8, 0.4, 0)
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1,0,0, 0,1,0, 0,0,1, 0,2.5,7)
+
+[node name="Counter" type="MeshInstance3D" parent="."]
+mesh = BoxMesh {}
+scale = Vector3(4,1,1.5)
+position = Vector3(0,0.5,0)
+
+[node name="IceMachine" type="MeshInstance3D" parent="."]
+mesh = BoxMesh {}
+scale = Vector3(0.6,0.8,0.6)
+position = Vector3(-1.5,1,0)
+
+[node name="MilkMachine" type="MeshInstance3D" parent="."]
+mesh = BoxMesh {}
+scale = Vector3(0.6,0.8,0.6)
+position = Vector3(0,1,0)
+
+[node name="CoffeeMachine" type="MeshInstance3D" parent="."]
+mesh = BoxMesh {}
+scale = Vector3(0.6,0.8,0.6)
+position = Vector3(1.5,1,0)
+
+[node name="NPC" type="Node3D" parent="."]
+position = Vector3(0,0,-3)
+
+[node name="Body" type="MeshInstance3D" parent="NPC"]
+mesh = CapsuleMesh {}
+scale = Vector3(0.6,1.4,0.6)
+
+[node name="Head" type="MeshInstance3D" parent="NPC"]
+mesh = SphereMesh {}
+position = Vector3(0,1.6,0)
+scale = Vector3(0.4,0.4,0.4)
+
+[node name="UI" type="Control" parent="."]
+script = ExtResource(1)
+
+[ext_resource path="res://ui.gd" type="Script" id=1]
